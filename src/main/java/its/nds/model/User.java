@@ -15,17 +15,26 @@ import java.util.Objects;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "users")
+@Table(name = "users_spring")
 public class User {
     @NonNull
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String surname;
-    private String email;
     private String phone;
+    private String email;
     private LocalDateTime dateOfBirth;
+
+    @Builder(toBuilder = true)
+    public User(String name, String surname, String phone, String email, LocalDateTime dateOfBirth) {
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+    }
+
 
     @Override
     public final boolean equals(Object o) {

@@ -65,9 +65,9 @@
 
     <div class="header">
         <div class="top-buttons">
-            <a href="#" class="button">About</a>
-            <a href="#" class="button">License</a>
-            <a href="#" class="button">Discover</a>
+            <a href="about" class="button">About</a>
+            <a href="user-list" class="button">User List</a>
+            <a href="documentation" class="button">Documentation</a>
             <a href="login" class="button login-button">Login</a>
             <a href="register" class="button register-button">Register</a>
         </div>
