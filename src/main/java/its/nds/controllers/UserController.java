@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -25,8 +26,20 @@ public class UserController {
     }
     @GetMapping("/user-list")
     public String showUserList(Model model) {
-        model.addAttribute("users", userService.getAllUsers());
-        return "user-list";
+        try {
+            List<User> users = userService.getAllUsers();
+
+            if (users != null) {
+                model.addAttribute("users", users);
+                return "user-list";
+            } else {
+                // Handle the case where the list is null
+                return "error"; // You can redirect to an error page or handle it in some way
+            }
+        } catch (Exception e) {
+            model.addAttribute("error", e);
+            return "error";
+        }
     }
     @PostMapping("/register")
     public String registerUser(@RequestParam String name,
