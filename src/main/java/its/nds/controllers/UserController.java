@@ -42,18 +42,18 @@ public class UserController {
         }
     }
     @PostMapping("/register")
-    public String registerUser(@RequestParam String name,
-                               @RequestParam String surname,
-                               @RequestParam String phone,
-                               @RequestParam String email,
-                               @RequestParam String birthdate,
-                               @RequestParam String password) {
+    public String registerUser(@RequestParam(name = "name") String name,
+                               @RequestParam(name = "surname") String surname,
+                               @RequestParam(name = "phone") String phone,
+                               @RequestParam(name = "email") String email,
+                               @RequestParam(name = "birthdate") Date birthdate,
+                               @RequestParam(name = "password") String password) {
         User userToRegister = User.builder()
                                 .name(name)
                                 .surname(surname)
                                 .phone(phone)
                                 .email(email)
-                                .dateOfBirth(LocalDateTime.parse(birthdate))
+                                .dateOfBirth(birthdate)
                                 .build();
         if(userService.registerUser(userToRegister)) {
             if(registrationServices.registerEncryptPassForUser(userToRegister, password)){

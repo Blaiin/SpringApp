@@ -22,7 +22,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableJpaRepositories("its.nds.repositories")
 public class JpaConfig {
-    @Value("${spring.datasource.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 
     @Value("${spring.datasource.url}")

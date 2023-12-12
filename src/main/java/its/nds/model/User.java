@@ -24,6 +24,7 @@ public class User {
     private String surname;
     private String phone;
     private String email;
+    @Column(name = "dob")
     private LocalDateTime dateOfBirth;
 
     @Builder(toBuilder = true)
