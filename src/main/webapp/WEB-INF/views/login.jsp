@@ -64,9 +64,9 @@
 <div class="login-container">
     <div class="login-form">
         <h2>Login</h2>
-        <form action="/login" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <form action="login" method="post">
+            <label for="email">Username:</label>
+            <input type="text" id="email" name="email" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit" class="login-button">Login</button>

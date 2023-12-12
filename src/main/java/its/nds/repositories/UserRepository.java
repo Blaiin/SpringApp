@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select count(u) from User u")
-    long countUserRecords();
+    int countUserRecords();
 
     @Query("select u from User u where u.name = :name")
     List<User> findUserByName(@Param("name") String name);

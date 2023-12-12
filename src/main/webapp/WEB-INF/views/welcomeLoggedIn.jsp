@@ -72,12 +72,10 @@
             <a href="about" class="button">About</a>
             <a href="user-list" class="button">User List</a>
             <a href="documentation" class="button">Documentation</a>
-            <a href="login" class="button login-button">Login</a>
-            <a href="register" class="button register-button">Register</a>
         </div>
-        <h1>Welcome to my Website</h1>
+        <h1>Welcome ${name} ${surname}!</h1>
         <p>Spring MVC app for data manipulation</p>
-        <p>Registered Users: ${registeredUserCount}</p>
+        <p>Registered on: ${registeredOn}</p>
     </div>
 
     <div class="content">

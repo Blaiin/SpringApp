@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="File" fileName="C:\Users\Utente\Desktop\Scrivania\Java\SpringApp\src\main\webapp\logs\logs.txt">
+            <PatternLayout pattern="%d %-5p [%c{1}] %m%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="File" />
+        </Root>
+    </Loggers>
+</Configuration>

@@ -10,15 +10,14 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "users_spring")
 public class User {
-    @NonNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String surname;
@@ -26,15 +25,6 @@ public class User {
     private String email;
     @Column(name = "dob")
     private LocalDateTime dateOfBirth;
-
-    @Builder(toBuilder = true)
-    public User(String name, String surname, String phone, String email, LocalDateTime dateOfBirth) {
-        this.name = name;
-        this.surname = surname;
-        this.phone = phone;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-    }
 
 
     @Override
