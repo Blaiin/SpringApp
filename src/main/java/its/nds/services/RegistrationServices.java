@@ -5,13 +5,13 @@ import its.nds.model.User;
 import its.nds.repositories.RegistrationRepository;
 import its.nds.repositories.UserRepository;
 import its.nds.utils.LogUtils;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -38,7 +38,7 @@ public class RegistrationServices {
                                         .user_email(user.getEmail())
                                         .encrypt_pass(BCrypt.hashpw(pass, salt))
                                         .salt(salt)
-                                        .registeredOn(LocalDateTime.now())
+                                        .registeredOn(LocalDate.now())
                                         .build();
              registrationRepository.save(registration);
              return true;

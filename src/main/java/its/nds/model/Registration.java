@@ -3,7 +3,8 @@ package its.nds.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -23,6 +24,6 @@ public class Registration {
     private String encrypt_pass;
     private String salt;
     @Column(name = "registeredon")
-    private LocalDateTime registeredOn;
+    private LocalDate registeredOn;
 
 }

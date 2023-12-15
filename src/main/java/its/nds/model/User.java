@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Getter
@@ -24,7 +24,7 @@ public class User {
     private String phone;
     private String email;
     @Column(name = "dob")
-    private LocalDateTime dateOfBirth;
+    private LocalDate dateOfBirth;
 
 
     @Override
